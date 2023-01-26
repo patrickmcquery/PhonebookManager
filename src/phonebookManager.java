@@ -9,9 +9,9 @@ public class phonebookManager
 		phonebook = new ArrayList<listNode>();
 	}
 	
-	public void addNode(String inName, String inPhone, String inAddress)
+	public void addNode(int index, String inName, String inPhone, String inAddress)
 	{
-		phonebook.add(new listNode(0, inName, inPhone, inAddress));
+		phonebook.add(new listNode(index, inName, inPhone, inAddress));
 	}
 	
 	public String toString()

@@ -17,7 +17,7 @@ public class Main
 		System.out.println("What's the address? ");
 		String address = console.nextLine();
 		
-		test.addNode(name, phone, address);
+		test.addNode(0, name, phone, address);
 		System.out.println(test);
 	}
 }
