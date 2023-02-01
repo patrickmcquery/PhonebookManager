@@ -68,18 +68,17 @@ public class Person
 			number = inPhoneNumber.substring(3, 6) + "-" + inPhoneNumber.substring(6);
 			phoneNumber = "(" + areaCode + ")" + number;
 		}
-		System.out.println("\nArea code: " + areaCode + "\nNumber: " + number);
 	}
 	
 	public void setAddress(String inAddress)
 	{
-		String[] addressArray= inAddress.split("\\s");
-		streetNumber = addressArray[0];
-		streetName = addressArray[1] + " " + addressArray[2];
-		line2 = addressArray[3] + " " + addressArray[4];
-		city = addressArray[5];
-		state = addressArray[6];
-		zip = addressArray[7];
+		//String[] addressArray= inAddress.split("\\s");
+		//streetNumber = addressArray[0];
+		//streetName = addressArray[1] + " " + addressArray[2];
+		//line2 = addressArray[3] + " " + addressArray[4];
+		//city = addressArray[5];
+		//state = addressArray[6];
+		//zip = addressArray[7];
 		address = inAddress;
 	}
 	
