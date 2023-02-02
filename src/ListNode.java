@@ -20,6 +20,11 @@ public class ListNode
 		next = new ListNode(index + 1, inPerson);
 	}
 	
+	public Person getPerson()
+	{
+		return person;
+	}
+	
 	public boolean hasNext()
 	{
 		return next != null;

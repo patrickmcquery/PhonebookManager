@@ -64,8 +64,8 @@ public class PhonebookManager
 	
 	public void delete(int index)
 	{
-		int i = 1;
 		ListNode temp = firstNode;
+		int i = 1;
 		while(temp.hasNext())
 		{
 			if(i == index - 1)
@@ -101,16 +101,61 @@ public class PhonebookManager
 		}
 	}
 	
+	public void modify(int index, char field, String modification)
+	{
+		int i = 1;
+		ListNode temp = firstNode;
+		while(temp.hasNext())
+		{
+			if(i == index)
+			{
+				switch(field)
+				{
+				case 'a':
+					temp.getPerson().setAddress(modification);
+					break;
+				case 'n':
+					temp.getPerson().setName(modification);
+					break;
+				case 'p':
+					temp.getPerson().setPhoneNumber(modification);
+					break;
+				}
+				return;
+			}
+			temp = temp.getNext();
+			i++;	
+		}
+		if(i == index)
+		{
+			switch(field)
+			{
+			case 'a':
+				temp.getPerson().setAddress(modification);
+				break;
+			case 'n':
+				temp.getPerson().setName(modification);
+				break;
+			case 'p':
+				temp.getPerson().setPhoneNumber(modification);
+				break;
+			}
+			return;
+		}
+	}
+	
 	public String toString()
 	{
 		ListNode node = firstNode;
 		String string = "";
+		int i = 1;
 		while(node.hasNext())
 		{
-			string += node.toString() + "\n";
+			string += i + ". " + node.toString() + "\n";
 			node = node.getNext();
+			i++;
 		}
-		string += node.toString() + "\n";
+		string += i + ". " + node.toString() + "\n";
 		return string;
 	}
 }

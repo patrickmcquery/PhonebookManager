@@ -152,7 +152,39 @@ public class Main
 	
 	public static void modify(Scanner console)
 	{
-		
+		System.out.println("Which entry would you like to modify?");
+		int resp = console.nextInt();
+		console.nextLine();
+        System.out.println();
+        if(resp > 0 && resp <= phonebook.length())
+        {
+        	System.out.println("What would you like to modify?");
+        	System.out.println("name/phone/address");
+        	String response = console.nextLine();
+            System.out.println();
+            System.out.println("What would you like it to be?");
+        	String modification = console.nextLine();
+            System.out.println();
+            switch (response.toLowerCase().charAt(0))
+            {
+                case 'n':
+                    phonebook.modify(resp,'n', modification);
+                    break;
+                case 'p':
+                	phonebook.modify(resp,'p', modification);
+                    break;
+                case 'a':
+                	phonebook.modify(resp,'a', modification);
+                	break;
+                default:
+                    System.out.println("Invalid response given, please try again.");
+            }
+        	System.out.println("Entry at position " + resp + " has been modified.");
+        }
+        else
+        {
+            	System.out.println("Invalid response given, please try again.");
+        }
 	}
 	
 	public static void delete(Scanner console)
@@ -162,7 +194,7 @@ public class Main
 		int resp = console.nextInt();
 		console.nextLine();
         System.out.println();
-        if(resp > 1 && resp <= phonebook.length())
+        if(resp > 0 && resp <= phonebook.length())
         {
         	phonebook.delete(resp);
         	System.out.println("Entry at position " + resp + " has been deleted");

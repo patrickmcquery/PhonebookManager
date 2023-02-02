@@ -26,7 +26,7 @@ public class Person
 		setAddress(inAddress.trim());
 	}
 	
-	private void setName(String inFullName)
+	public void setName(String inFullName)
 	{
 		fullName = inFullName;
 		String[] nameArray= fullName.split("\\s");
