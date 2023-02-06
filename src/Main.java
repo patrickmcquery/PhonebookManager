@@ -1,23 +1,27 @@
+/*
+ * Patrick McQuery
+ * 
+ * Main class for the phonebook assignment
+ */
 import java.util.Scanner;
 
 public class Main 
 {
 	static PhonebookManager phonebook = new PhonebookManager();
 	
+	/*
+	 * Contains the main loop for interacting with the phonebook
+	 * You can add, modify, delete, print or quit
+	 * Calls the appropriate method based on user input
+	 */
 	public static void main(String[] args) 
 	{
-		Scanner console = new Scanner(System.in);
-		phonebook.add(new Person("j j j","1231231234","addy1"));
-		phonebook.add(new Person("h h h","2342342345","addy2"));
-		phonebook.add(new Person("g g g","3453453456","addy3"));
-		phonebook.add(new Person("f f f","4564564567","addy4"));
-		
+		Scanner console = new Scanner(System.in);		
 		boolean doing = true;
 		while(doing)
 		{
 			System.out.println("What would you like to do?");
 			System.out.println("add/modify/delete/print/quit");
-			
 			String resp = console.nextLine();
 	        System.out.println();
 	        switch (resp.toLowerCase().charAt(0))
@@ -43,7 +47,7 @@ public class Main
 	         }
 		}
 	}
-
+	//Add an entry to the phonebook. Can be at the start, end, or middle.
 	public static void add(Scanner console)
 	{
 		boolean adding = true;
@@ -88,39 +92,31 @@ public class Main
 	            }
 		}
 	}
-	
+	//Adds an entry to the end of the phonebook
 	public static void addEnd(Scanner console)
 	{
 			System.out.println("Let's add a new entry to the end of the phonebook.");
-			
 			System.out.println("What's the name? ");
 			String name = console.nextLine();
-			
 			System.out.println("What's the phone number? ");
 			String phone = console.nextLine();
-			
 			System.out.println("What's the address? ");
 			String address = console.nextLine();
-			
 			phonebook.add(new Person(name, phone, address));
 	}
-	
+	//Adds an entry to the start of the phonebook
 	public static void addStart(Scanner console)
 	{
-			System.out.println("Let's add a new entry to the start of the phonebook.");
-			
+			System.out.println("Let's add a new entry to the start of the phonebook.");		
 			System.out.println("What's the name? ");
 			String name = console.nextLine();
-			
 			System.out.println("What's the phone number? ");
 			String phone = console.nextLine();
-			
 			System.out.println("What's the address? ");
 			String address = console.nextLine();
-			
 			phonebook.addStart(new Person(name, phone, address));
 	}
-	
+	//Adds an entry to the middle of the phonebook
 	public static void addMiddle(Scanner console)
 	{
 		System.out.println("What position would you like to add the new entry at?");
@@ -130,17 +126,13 @@ public class Main
         System.out.println();
         if(resp > 1 && resp <= phonebook.length())
         {
-        	System.out.println("Let's add a new entry to position " + resp + " of the phonebook.");
-			
+        	System.out.println("Let's add a new entry to position " + resp + " of the phonebook.");		
 			System.out.println("What's the name? ");
 			String name = console.nextLine();
-			
 			System.out.println("What's the phone number? ");
 			String phone = console.nextLine();
-			
 			System.out.println("What's the address? ");
 			String address = console.nextLine();
-			
 			phonebook.addAt(resp, new Person(name, phone, address));
         }
         else
@@ -149,7 +141,7 @@ public class Main
         }
 		
 	}
-	
+	//Modifies the user chosen entry's chosen field
 	public static void modify(Scanner console)
 	{
 		System.out.println("Which entry would you like to modify?");
@@ -186,7 +178,7 @@ public class Main
             	System.out.println("Invalid response given, please try again.");
         }
 	}
-	
+	//Deletes an entry
 	public static void delete(Scanner console)
 	{
 		System.out.println("What position is the entry at that you would like to delete?");
@@ -204,7 +196,7 @@ public class Main
             	System.out.println("Invalid response given, please try again.");
         }
 	}
-	
+	//Prints the phonebook
 	public static void print()
 	{
 		System.out.println(phonebook);

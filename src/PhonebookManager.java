@@ -1,12 +1,17 @@
+/*
+ * Patrick McQuery
+ * 
+ * Phonebook manager class
+ * Contains the ability to keep a list of entries using the ListNode class
+ */
+
 public class PhonebookManager 
 {
 	ListNode firstNode;
-	
 	public PhonebookManager()
 	{
 		firstNode = null;
 	}
-	
 	public void add(Person person)
 	{
 		ListNode node = new ListNode(person);
@@ -22,10 +27,8 @@ public class PhonebookManager
 				temp = temp.getNext();
 			}
 			temp.setNext(node);
-		}
-		
+		}	
 	}
-	
 	public void addStart(Person person)
 	{
 		ListNode node = new ListNode(person);
@@ -39,7 +42,6 @@ public class PhonebookManager
 			firstNode = node;
 		}
 	}
-	
 	public void addAt(int index, Person person)
 	{
 		int i = 1;
@@ -61,10 +63,14 @@ public class PhonebookManager
 			temp.setNext(node);
 		}
 	}
-	
 	public void delete(int index)
 	{
 		ListNode temp = firstNode;
+		if(index == 1)
+		{
+			firstNode = temp.getNext();
+			return;
+		}
 		int i = 1;
 		while(temp.hasNext())
 		{
@@ -81,7 +87,6 @@ public class PhonebookManager
 			temp.setNext(temp.getNext().getNext());
 		}
 	}
-	
 	public int length()
 	{
 		int i = 1;
@@ -100,7 +105,6 @@ public class PhonebookManager
 			return i;
 		}
 	}
-	
 	public void modify(int index, char field, String modification)
 	{
 		int i = 1;
@@ -143,9 +147,12 @@ public class PhonebookManager
 			return;
 		}
 	}
-	
 	public String toString()
 	{
+		if(firstNode == null)
+		{
+			return "Phonebook is empty.";
+		}
 		ListNode node = firstNode;
 		String string = "";
 		int i = 1;

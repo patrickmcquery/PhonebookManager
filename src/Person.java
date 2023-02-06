@@ -1,3 +1,12 @@
+/*
+ * Patrick McQuery
+ * 
+ * The person class
+ * Contains the name, phone number, and address
+ * Has the ability to store the name and phonenumber as seperated values
+ * doesn't do anything with this funcitonality though
+ */
+
 public class Person 
 {
 	private String fullName;
@@ -7,15 +16,7 @@ public class Person
 	private String phoneNumber;
 	private String areaCode;
 	private String number;
-	private String address;
-	private String streetNumber;
-	private String streetName;
-	private String line2;
-	private String zip;
-	private String city;
-	private String state;
-	private String country;
-	
+	private String address;	
 	public Person(String inFullName, String inPhoneNumber, String inAddress)
 	{
 		
@@ -47,7 +48,6 @@ public class Person
 			default: System.out.println("Error: Name doesn't exist");
 		}
 	}
-	
 	public void setPhoneNumber(String inPhoneNumber)
 	{
 		if(inPhoneNumber.contains("(") && inPhoneNumber.contains(")") && inPhoneNumber.contains("-"))
@@ -69,19 +69,10 @@ public class Person
 			phoneNumber = "(" + areaCode + ")" + number;
 		}
 	}
-	
 	public void setAddress(String inAddress)
 	{
-		//String[] addressArray= inAddress.split("\\s");
-		//streetNumber = addressArray[0];
-		//streetName = addressArray[1] + " " + addressArray[2];
-		//line2 = addressArray[3] + " " + addressArray[4];
-		//city = addressArray[5];
-		//state = addressArray[6];
-		//zip = addressArray[7];
 		address = inAddress;
 	}
-	
 	public String toString()
 	{
 		return fullName + ", " + address + ", " + phoneNumber;
