@@ -2,7 +2,7 @@
  * Patrick McQuery
  * 
  * List node class
- * Contains a person,
+ * Contains a person, and a few methods to help create a list
  */
 public class ListNode 
 {

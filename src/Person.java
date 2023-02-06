@@ -16,7 +16,7 @@ public class Person
 	private String phoneNumber;
 	private String areaCode;
 	private String number;
-	private String address;	
+	private String address;
 	public Person(String inFullName, String inPhoneNumber, String inAddress)
 	{
 		
@@ -26,7 +26,7 @@ public class Person
 		
 		setAddress(inAddress.trim());
 	}
-	
+	//Sets the fullName, firstName, middleName, and lastName of the person
 	public void setName(String inFullName)
 	{
 		fullName = inFullName;
@@ -48,6 +48,7 @@ public class Person
 			default: System.out.println("Error: Name doesn't exist");
 		}
 	}
+	//Sets the phonenumber, and splits it up into area code, and the 7 digit phone number
 	public void setPhoneNumber(String inPhoneNumber)
 	{
 		if(inPhoneNumber.contains("(") && inPhoneNumber.contains(")") && inPhoneNumber.contains("-"))
@@ -69,6 +70,7 @@ public class Person
 			phoneNumber = "(" + areaCode + ")" + number;
 		}
 	}
+	//Address is stored as just a string
 	public void setAddress(String inAddress)
 	{
 		address = inAddress;

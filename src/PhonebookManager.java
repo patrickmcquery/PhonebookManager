@@ -12,6 +12,7 @@ public class PhonebookManager
 	{
 		firstNode = null;
 	}
+	//Adds a person to the list at the end
 	public void add(Person person)
 	{
 		ListNode node = new ListNode(person);
@@ -29,6 +30,7 @@ public class PhonebookManager
 			temp.setNext(node);
 		}	
 	}
+	//Adds a person to the start of the list
 	public void addStart(Person person)
 	{
 		ListNode node = new ListNode(person);
@@ -42,6 +44,7 @@ public class PhonebookManager
 			firstNode = node;
 		}
 	}
+	//Adds a person at a specified index
 	public void addAt(int index, Person person)
 	{
 		int i = 1;
@@ -63,6 +66,7 @@ public class PhonebookManager
 			temp.setNext(node);
 		}
 	}
+	//Deletes the person at the specified index
 	public void delete(int index)
 	{
 		ListNode temp = firstNode;
@@ -87,6 +91,7 @@ public class PhonebookManager
 			temp.setNext(temp.getNext().getNext());
 		}
 	}
+	//Returns the length of the list
 	public int length()
 	{
 		int i = 1;
@@ -105,6 +110,7 @@ public class PhonebookManager
 			return i;
 		}
 	}
+	//Modifies a specified field, of a person at a specified index with a specified modification
 	public void modify(int index, char field, String modification)
 	{
 		int i = 1;
